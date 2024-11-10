@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -10,11 +10,16 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
         }
         .container {
             display: flex;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
         }
+        /* Panel de la izquierda con barra de desplazamiento */
         .sidebar {
             width: 250px;
             background-color: #f0f0f0;
@@ -23,11 +28,13 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            overflow-y: auto; /* Barra de desplazamiento solo en el panel izquierdo */
         }
         .sidebar img {
             width: 100px;
             margin-bottom: 20px;
         }
+        /* Tamaño estándar de títulos */
         .sidebar h2 {
             font-size: 16px;
             text-align: left;
@@ -35,11 +42,13 @@
             color: #333;
             margin-top: 20px;
         }
+        /* Lista de navegación */
         .sidebar ul {
             list-style-type: none;
             padding: 0;
             width: 100%;
         }
+        /* Tamaño de los enlaces principales */
         .sidebar ul li {
             margin-bottom: 8px;
         }
@@ -49,11 +58,12 @@
             font-size: 14px;
             font-weight: bold;
         }
-        /* Estilos para los subtítulos indentados */
+        /* Tamaño estándar de subtítulos nivel 1 */
         .sidebar ul ul {
             list-style-type: disc;
             margin-left: 20px;
         }
+        /* Tamaño estándar de subtítulos nivel 2 */
         .sidebar ul ul li a {
             font-size: 12px;
             color: #555;
@@ -65,6 +75,7 @@
             justify-content: center;
             align-items: center;
         }
+        /* Ajuste del iframe para que no tenga bordes */
         iframe {
             width: 100%;
             height: 100%;
@@ -115,7 +126,13 @@
 
         <h2>Procesos Verificación y Prueba</h2>
         <ul>
-            <li><a href="assets/Flujo%20Validación%20de%20Documentación%20de%20Soporte%20de%20Ventas.pdf" target="pdf-frame">Validación de Documentación de Soporte de Ventas</a></li>
+            <li>
+                <a href="assets/Flujo%20Validación%20de%20Documentación%20de%20Soporte%20de%20Ventas.pdf" target="pdf-frame">Validación de Documentación de Soporte de Ventas</a>
+                <ul>
+                    <li><a href="assets/Flujo%20Validación%20de%20Documentación%20de%20Soporte%20de%20Ventas%20(Cambios).pdf" target="pdf-frame">Cambios</a></li>
+                    <li><a href="assets/Flujo%20Validación%20de%20Documentación%20de%20Soporte%20de%20Ventas%20(Propuesto).pdf" target="pdf-frame">Propuesto</a></li>
+                </ul>
+            </li>
         </ul>
     </div>
     <div class="content">
