@@ -49,6 +49,16 @@
             font-size: 14px; /* Tamaño reducido para los subtítulos */
             font-weight: bold;
         }
+        /* Estilos para los subtítulos indentados */
+        .sidebar ul ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        .sidebar ul ul li a {
+            font-size: 12px; /* Tamaño más pequeño para los subtítulos */
+            color: #555;
+            font-weight: normal;
+        }
         .content {
             flex: 1;
             display: flex;
@@ -70,7 +80,13 @@
         
         <h2>Procesos ARS</h2>
         <ul>
-            <li><a href="assets/Flujo%20Asignación%20de%20NCF%20y%20Pre-radicación.pdf" target="pdf-frame">Asignación de NCF y Pre-radicación</a></li>
+            <li>
+                <a href="assets/Flujo%20Asignación%20de%20NCF%20y%20Pre-radicación.pdf" target="pdf-frame">Asignación de NCF y Pre-radicación</a>
+                <ul>
+                    <li><a href="assets/Flujo%20Asignación%20de%20NCF%20y%20Pre-radicación%20(Cambios).pdf" target="pdf-frame">Cambios</a></li>
+                    <li><a href="assets/Flujo%20Asignación%20de%20NCF%20y%20Pre-radicación%20(Propuesto).pdf" target="pdf-frame">Propuesto</a></li>
+                </ul>
+            </li>
             <li><a href="assets/Flujo%20Gestión%20de%20Cobro%20de%20Cuentas%20ARS.pdf" target="pdf-frame">Gestión de Cobro de Cuentas ARS</a></li>
             <li><a href="assets/Flujo%20Gestión%20de%20Glosas%20y%20Devoluciones.pdf" target="pdf-frame">Gestión de Glosas y Devoluciones</a></li>
         </ul>
