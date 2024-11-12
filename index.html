@@ -24,7 +24,6 @@
             padding: 20px;
             box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
             overflow-y: auto;
-            height: 100vh;
         }
         .sidebar img {
             width: 80px;
@@ -52,31 +51,27 @@
         /* Contenido del panel derecho */
         .content {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             background-color: #fff;
             text-align: center;
-            padding: 20px;
-            overflow-y: auto;
         }
-        /* Estilo para el iframe */
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        /* Estilo para el logo y texto en el panel derecho */
         .content img {
-            width: 100px;
-            margin: 0 auto;
-            display: block;
+            width: 200px;
+            opacity: 0.8;
+            margin-bottom: 20px;
         }
         .content h1 {
-            font-size: 24px;
-            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0;
         }
-        .content p {
-            font-size: 18px;
-            margin-top: 10px;
-            color: #333;
+        .content h2 {
+            font-size: 16px;
+            font-weight: normal;
+            margin: 5px 0;
         }
     </style>
 </head>
@@ -171,15 +166,47 @@
 
     </div>
 
-    <!-- Panel derecho donde se carga el contenido en un iframe -->
-    <div class="content">
-        <!-- Logo y texto en el panel derecho -->
-        <img src="assets/Logo.png" alt="Logo">
+
+    <!-- Panel derecho con el contenido cargado dinámicamente -->
+    <div class="content" id="contentArea">
+        <img src="assets/Logo.png" alt="Logo Centralizado">
         <h1>Informe de Optimización de Procesos – Finanzas</h1>
-        <p>Fase I: Contabilidad (Cuentas por Cobrar / Cuentas por Pagar) y Finanzas (Validación y Prueba)</p>
-        <iframe name="contentFrame" src="home.html"></iframe> <!-- Página de inicio predeterminada -->
+        <h2>Fase I: Contabilidad (Cuentas por Cobrar / Cuentas por Pagar) y Finanzas (Validación y Prueba)</h2>
     </div>
 </div>
+
+<script>
+    // Función para cargar contenido dinámicamente en el panel derecho
+    document.querySelectorAll('.menu-link').forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault(); // Evitar que el enlace recargue la página
+
+            // Obtener el contenido desde un archivo HTML (simulado)
+            const content = this.getAttribute('data-content');
+            loadContent(content);
+        });
+    });
+
+    // Función para cargar contenido en el panel derecho
+    function loadContent(content) {
+        let contentArea = document.getElementById('contentArea');
+
+        switch(content) {
+            case 'Objetivos':
+                contentArea.innerHTML = '<h1>Objetivos del Informe</h1><p>Contenido del objetivo...</p>';
+                break;
+            case 'Alcance':
+                contentArea.innerHTML = '<h1>Alcance del Informe</h1><p>Contenido del alcance...</p>';
+                break;
+            case 'Limitantes':
+                contentArea.innerHTML = '<h1>Limitantes del Informe</h1><p>Contenido de las limitantes...</p>';
+                break;
+            // Añadir más casos según sea necesario
+            default:
+                contentArea.innerHTML = '<h1>Contenido no encontrado</h1>';
+        }
+    }
+</script>
 
 </body>
 </html>
