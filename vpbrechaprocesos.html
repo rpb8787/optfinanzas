@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Documentación de Soporte de Ventas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .link-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .link {
+            display: block;
+            margin: 10px 0;
+            font-size: 1.2em;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+        iframe {
+            width: 80%;
+            height: 600px;
+            border: none;
+            margin-top: 20px;
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Validación de Documentación de Soporte de Ventas</h1>
+
+    <div class="link-container">
+        <!-- Enlace Actual -->
+        <a href="javascript:void(0);" class="link" onclick="showPDF('assets/Flujo Validación de Documentación de Soporte de Ventas (Cambios).pdf')">Actual</a>
+        
+        <!-- Enlace Propuesto -->
+        <a href="javascript:void(0);" class="link" onclick="showPDF('assets/Flujo Validación de Documentación de Soporte de Ventas (Propuesto).pdf')">Propuesto</a>
+    </div>
+
+    <iframe id="pdfViewer"></iframe>
+
+    <script>
+        function showPDF(pdfUrl) {
+            var iframe = document.getElementById('pdfViewer');
+            iframe.src = pdfUrl;
+            iframe.style.display = 'block'; // Show iframe when link is clicked
+        }
+    </script>
+
+</body>
+</html>

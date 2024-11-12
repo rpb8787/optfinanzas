@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeadCount ARS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .link-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .link {
+            display: block;
+            margin: 10px 0;
+            font-size: 1.2em;
+            color: #007bff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+        img {
+            width: 80%;
+            height: auto;
+            border: 1px solid #ccc;
+            display: none;
+            margin-top: 20px;
+        }
+        table {
+            width: 80%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            display: none; /* Ocultamos la tabla inicialmente */
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HeadCount ARS</h1>
+
+    <div class="link-container">
+        <!-- Enlace Actual -->
+        <a onclick="showImageAndTable('assets/hcarsprop.png', false)" class="link">Actual</a>
+        
+        <!-- Enlace Propuesto -->
+        <a onclick="showImageAndTable('assets/hcarsprop2.png', true)" class="link">Propuesto</a>
+    </div>
+
+    <!-- Imagen que se muestra -->
+    <img id="imageViewer" src="" alt="Imagen de HeadCount ARS">
+
+    <!-- Tabla que se despliega con la imagen Propuesta -->
+    <table id="headCountTable">
+        <thead>
+            <tr>
+                <th>Actual</th>
+                <th>Propuesto</th>
+                <th>Acción</th>
+                <th>Diferencia</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>4</td>
+                <td>3</td>
+                <td>Reubicación</td>
+                <td>-1</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>0</td>
+                <td>Transferencia</td>
+                <td>0</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function showImageAndTable(imagePath, showTable) {
+            // Mostrar la imagen
+            const image = document.getElementById('imageViewer');
+            image.src = imagePath;
+            image.style.display = 'block';
+
+            // Mostrar u ocultar la tabla según la opción seleccionada
+            const table = document.getElementById('headCountTable');
+            if (showTable) {
+                table.style.display = 'table'; // Mostrar la tabla para "Propuesto"
+            } else {
+                table.style.display = 'none'; // Ocultar la tabla para "Actual"
+            }
+        }
+    </script>
+
+</body>
+</html>

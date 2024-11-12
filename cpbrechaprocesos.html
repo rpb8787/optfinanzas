@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Facturas de Cuentas por Pagar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #444;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #555;
+            margin-top: 15px;
+        }
+        .link-container {
+            width: 80%;
+            margin-top: 20px;
+            text-align: center;
+        }
+        .link {
+            display: block;
+            margin: 10px 0;
+            font-size: 1.2em;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Registro de Facturas de Cuentas por Pagar</h1>
+
+    <!-- Escenario 1 -->
+    <div class="link-container">
+        <h2>Escenario 1</h2>
+        
+        <!-- Subtítulo Actual para Escenario 1 -->
+        <h3>Actual</h3>
+        <a href="javascript:void(0)" class="link" onclick="mostrarPDF('pdf-escenario1-actual')">Ver archivo Actual (Escenario 1)</a>
+        
+        <!-- Subtítulo Propuesto para Escenario 1 -->
+        <h3>Propuesto</h3>
+        <a href="javascript:void(0)" class="link" onclick="mostrarPDF('pdf-escenario1-propuesto')">Ver archivo Propuesto (Escenario 1)</a>
+    </div>
+
+    <!-- Escenario 2 -->
+    <div class="link-container">
+        <h2>Escenario 2</h2>
+        
+        <!-- Subtítulo Actual para Escenario 2 -->
+        <h3>Actual</h3>
+        <a href="javascript:void(0)" class="link" onclick="mostrarPDF('pdf-escenario2-actual')">Ver archivo Actual (Escenario 2)</a>
+        
+        <!-- Subtítulo Propuesto para Escenario 2 -->
+        <h3>Propuesto</h3>
+        <a href="javascript:void(0)" class="link" onclick="mostrarPDF('pdf-escenario2-propuesto')">Ver archivo Propuesto (Escenario 2)</a>
+    </div>
+
+    <!-- PDFs de Escenario 1 -->
+    <iframe id="pdf-escenario1-actual" src="assets/Flujo Registro de Facturas de Cuentas por Pagar (Cambios, escenario 1).pdf"></iframe>
+    <iframe id="pdf-escenario1-propuesto" src="assets/Flujo Registro de Facturas de Cuentas por Pagar (Propuesto, escenario 1).pdf"></iframe>
+
+    <!-- PDFs de Escenario 2 -->
+    <iframe id="pdf-escenario2-actual" src="assets/Flujo Registro de Facturas de Cuentas por Pagar (Cambios, escenario 2).pdf"></iframe>
+    <iframe id="pdf-escenario2-propuesto" src="assets/Flujo Registro de Facturas de Cuentas por Pagar (Propuesto, escenario 2).pdf"></iframe>
+
+    <script>
+        function mostrarPDF(pdfID) {
+            // Oculta todos los iframes
+            var iframes = document.querySelectorAll('iframe');
+            iframes.forEach(function(iframe) {
+                iframe.style.display = 'none';
+            });
+            
+            // Muestra el iframe seleccionado
+            document.getElementById(pdfID).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

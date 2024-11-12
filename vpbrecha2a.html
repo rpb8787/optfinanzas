@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flujo de trabajo de validación de documentación de soporte de ventas no lineal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 30px;
+        }
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        table {
+            width: 100%;
+            margin-top: 30px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .download-btn {
+            padding: 10px 20px;
+            font-size: 1.1em;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .download-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Flujo de trabajo de validación de documentación de soporte de ventas no lineal</h1>
+
+    <p>
+        Con el fin de promover un enfoque a procesos, estamos proponiendo la creación de un único canal de recepción de documentación de soporte de ventas con una única posición de Auxiliar de Validación y Prueba. Esta propuesta busca eliminar las ineficiencias presentes en la multicanalidad de recepción y la falta de linealidad en el proceso. A continuación, presentamos la proyección de carga laboral y capacidad del proceso bajo estos supuestos.
+    </p>
+
+    <div class="image-container">
+        <img src="assets/vp4.png" alt="Flujo de trabajo de validación de documentación">
+    </div>
+
+    <h2>Escenario propuesto: unificación de todas las tareas de validación</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Posición</th>
+                <th>% de Ocupación</th>
+                <th>Tareas de validación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Auxiliar de Validación y Prueba</td>
+                <td>67.16</td>
+                <td>Validación de documentación de soporte de ventas (Efectivo, ARS y Tarjeta)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        Luego de unificadas las tareas para un Auxiliar de Validación y Prueba, notamos que la carga de trabajo se encuentra por debajo del nivel ideal de 84.00%. Para identificar cuántos auxiliares necesitaríamos para mantener un estado balanceado de carga laboral:
+    </p>
+
+    <h3>Escenario propuesto:</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Fórmula</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>X (auxiliares requeridos) = (X1 (auxiliares actuales) x T (ocupación actual)) / T1 (ocupación óptima)</td>
+                <td>(27 x 67.16) / 86 = 21.08 = 21 Auxiliares de Validación y Prueba</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        Se puede concluir que, una vez unificadas las responsabilidades en una posición de Auxiliar de Validación y Prueba, lograríamos un estado ideal de balance de carga con 21 auxiliares.
+        <br><br>
+        Para determinar el ritmo requerido del proceso para cumplir con la demanda de las ventas en las sucursales, asumiendo la demanda a partir de la validación de la documentación por sucursal (metodología utilizada en la actualidad):
+    </p>
+
+    <h3>Validación y Prueba de Documentación de Soporte de Ventas (Propuesto)</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tiempo takt (Tiempo disponible/Volumen de solicitudes)</td>
+                <td>(480 x 21) / 130 = 77.53 min</td>
+            </tr>
+            <tr>
+                <td>Horas productivas por día (min) (8hr x 60 min)</td>
+                <td>480</td>
+            </tr>
+            <tr>
+                <td>HeadCount (Aux. Sr. de CxP) (Sucursales y CENDIS)</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>Tiempo de ciclo (Organización de Facturas + Registro de Facturas de Sucursales + Creación de Diario de Pago) (min)</td>
+                <td>95.09 min</td>
+            </tr>
+            <tr>
+                <td>Volumen de trabajo (Facturas generadas por mes)</td>
+                <td>130 sucursales</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        Podemos observar que, al unificar las funciones, el ritmo del proceso actual (1 sucursal cada 95.09 min) es más lento que el ritmo requerido para cumplir con la demanda (1 sucursal cada 77.53 min). Es importante notar que muchas ineficiencias dentro del proceso no lineal actual (tras papeleo de documentación, traslados, solicitud de asistencia, entre otros) se esperan eliminar con estos cambios. Sin embargo, recomendamos ajustar el HeadCount de 21 a 23 auxiliares para un inicio de la implementación, para no incurrir en un inventario elevado de trabajo en proceso o pendiente. Bajo esta nueva sugerencia:
+    </p>
+
+    <h3>Validación y Prueba de Documentación de Soporte de Ventas (Propuesto)</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tiempo takt (Tiempo disponible/Volumen de solicitudes)</td>
+                <td>(480 x 23) / 130 = 84.92 min</td>
+            </tr>
+            <tr>
+                <td>Horas productivas por día (min) (8hr x 60 min)</td>
+                <td>480</td>
+            </tr>
+            <tr>
+                <td>HeadCount (Aux. Sr. de CxP) (Sucursales y CENDIS)</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td>Tiempo de ciclo (Organización de Facturas + Registro de Facturas de Sucursales + Creación de Diario de Pago) (min)</td>
+                <td>95.09 min</td>
+            </tr>
+            <tr>
+                <td>Volumen de trabajo (Facturas generadas por mes)</td>
+                <td>130 sucursales</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        Aunque el ritmo del proceso continúa siendo inferior al ritmo requerido por la demanda, contamos con mayor holgura y un inventario de trabajo en proceso más manejable.
+    </p>
+
+</body>
+</html>

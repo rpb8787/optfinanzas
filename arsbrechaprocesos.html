@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asignación de NCF y Pre-radicación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .link-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .link {
+            display: block;
+            margin: 10px 0;
+            font-size: 1.2em;
+            color: #007bff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+        iframe {
+            width: 80%;
+            height: 600px;
+            border: 1px solid #ccc;
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Asignación de NCF y Pre-radicación</h1>
+
+    <div class="link-container">
+        <!-- Enlace Actual -->
+        <a onclick="showPDF('assets/Flujo Asignación de NCF y Pre-radicación (Cambios).pdf')" class="link">Actual</a>
+        
+        <!-- Enlace Propuesto -->
+        <a onclick="showPDF('assets/Flujo Asignación de NCF y Pre-radicación (Propuesto).pdf')" class="link">Propuesto</a>
+    </div>
+
+    <!-- iframe para mostrar el PDF -->
+    <iframe id="pdfViewer" src=""></iframe>
+
+    <script>
+        function showPDF(pdfPath) {
+            const iframe = document.getElementById('pdfViewer');
+            iframe.src = pdfPath;
+            iframe.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>

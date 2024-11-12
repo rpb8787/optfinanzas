@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimización de Carga Laboral en Cuentas por Pagar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .content {
+            width: 80%;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        img {
+            width: 80%;
+            height: auto;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            text-align: left;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Optimización de Carga Laboral en Cuentas por Pagar</h1>
+
+    <!-- Imagen cpbrecha4.png -->
+    <img src="assets/cpbrecha4.png" alt="Imagen de brecha">
+
+    <!-- Texto debajo de la imagen -->
+    <div class="content">
+        <p>La principal causa de los retrabajos en las facturas, representando cerca de un 80% de los casos, corresponde a los errores en la recepción de mercancía en sucursales debido a la falta de integración entre Zempac y D365. Por otro lado, el registro manual de facturas por el Auxiliar Sr. de Cuentas por Pagar es otro síntoma de esta falta de integración.</p>
+
+        <p>Para la optimización de esta carga laboral en Cuentas por Pagar recomendamos la implementación de un módulo de recepción de mercancía en D365 para las sucursales, las cuales, en un escenario optimista, estaría reduciendo los retrabajos en al menos un 80% de los casos, y se eliminaría el registro manual de facturas por los Auxiliares Sr. de Cuentas por Pagar.</p>
+
+        <p>Como una propuesta alternativa, con el desarrollo interno de un mecanismo en Zempac que transfiera la información digitada por las sucursales en el registro de facturas a D365, eliminando así el registro manual de facturas. Esta tarea de Registro de Facturas se estaría sustituyendo por Validación de Registro de Facturas, donde el Auxiliar Sr. de Cuentas por Cobrar estaría simplemente validando la información de la factura registrada por las sucursales, donde estimamos que se reduciría el tiempo de ciclo de esta tarea en al menos un 90%.</p>
+
+        <p>A continuación, presentamos las implicaciones que estos cambios tendrían en lo que se refiere a la carga y capacidad del área y sus procesos, proyectando estas estimaciones en la toma de tiempos registrada durante el levantamiento de los procesos.</p>
+    </div>
+
+    <!-- Tabla de Escenarios -->
+    <table>
+        <thead>
+            <tr>
+                <th>Escenario</th>
+                <th>% Ocup. Auxiliar Sr. de Cuentas por Pagar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Escenario actual (32.37% de facturas retrabajadas y 25.01% del tiempo productivo dedicado a registro manual de facturas)</td>
+                <td>88.73</td>
+            </tr>
+            <tr>
+                <td>1: Reducción 90% de tiempo de ciclo por registro manual de facturas (desarrollo interno de mecanismo para transferencia de información de Zempac a D365)</td>
+                <td>69.36</td>
+            </tr>
+            <tr>
+                <td>2: Reducción de 90% de tiempo de ciclo por registro manual de facturas + Reducción de 80% de retrabajos de facturas (implementación de módulo de recepción de mercancía en D365 en sucursales)</td>
+                <td>36.33</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="content">
+        <p>Para el cálculo de los Auxiliares Sr. de Cuentas por Pagar bajo estos nuevos modelos operativos y asumiendo un comportamiento lineal del % de Ocupación, tenemos los siguientes resultados:</p>
+    </div>
+
+    <!-- Tabla de Auxiliares Requeridos -->
+    <table>
+        <thead>
+            <tr>
+                <th>Escenario 1</th>
+                <th>Escenario 2</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>X (auxiliares requeridos)= (X1 (auxiliares actuales) x T (ocupación actual)) / T1 (ocupación óptima)<br>
+                    X= 4.12 = 4 Auxiliares Sr. de Cuentas por Pagar (2 auxiliares dedicados a facturas de sucursales y CENDIS, y 2 auxiliares para el resto)
+                </td>
+                <td>X (auxiliares requeridos)= (X1 (auxiliares actuales) x T (ocupación actual)) / T1 (ocupación óptima)<br>
+                    X= 2.16 = 2 Auxiliares Sr. de Cuentas por Pagar (1 auxiliar dedicado a facturas de sucursales y CENDIS y 1 auxiliar para el resto)
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="content">
+        <p>Para asegurar que el ritmo (velocidad) del proceso es suficiente para cumplir con la demanda de facturas a trabajar para cada uno de los escenarios, con la cantidad de auxiliares propuestos:</p>
+    </div>
+
+    <!-- Tabla de Validación de Registro de Factura (Escenario 1) -->
+    <table>
+        <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tiempo takt (Tiempo disponible/Volumen de solicitudes)</td>
+                <td>(480 x 2)/296.73 = 3.24 min</td>
+            </tr>
+            <tr>
+                <td>Horas productivas por día (min) (8hr x 60 min)</td>
+                <td>480</td>
+            </tr>
+            <tr>
+                <td>HeadCount (Aux. Sr. de CxP)(Sucursales y CENDIS)</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>Tiempo de ciclo (Organización de Facturas + Registro de Facturas de Sucursales + Creación de Diario de Pago) (min)</td>
+                <td>0.63 min + 0.68 min + 2.46 min = 3.77 min</td>
+            </tr>
+            <tr>
+                <td>Volumen de trabajo (Facturas generadas por mes)</td>
+                <td>7,071 (296.73 facturas por día)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Tabla de Validación de Registro de Factura (Escenario 2) -->
+    <table>
+        <thead>
+            <tr>
+                <th>Variable</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tiempo takt (Tiempo disponible/Volumen de solicitudes)</td>
+                <td>(480 x 1)/296.73 = 1.62 min</td>
+            </tr>
+            <tr>
+                <td>Horas productivas por día (min) (8hr x 60 min)</td>
+                <td>480</td>
+            </tr>
+            <tr>
+                <td>HeadCount (Aux. Sr. de CxP)(Sucursales y CENDIS)</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>Tiempo de ciclo (Organización de Facturas + Registro de Facturas de Sucursales + Creación de Diario de Pago) (min)</td>
+                <td>0.63 min + 0.14 min + 1.16 min = 1.93 min</td>
+            </tr>
+            <tr>
+                <td>Volumen de trabajo (Facturas generadas por mes)</td>
+                <td>7,071 (296.73 facturas por día)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="content">
+        <p>Podemos concluir que, en ambos modelos operativos propuestos, el tiempo de ciclo resulta muy cercano al tiempo requerido para cumplir con la demanda, con una inclinación a incrementos mínimos del inventario de trabajos en proceso. Este inventario puede ser reducido con los esfuerzos continuos de optimización de procesos.</p>
+    </div>
+
+    <!-- Botón de descarga -->
+    <button onclick="window.location.href='assets/Registro Tomas de Tiempo Finanzas (CxP).xlsx'">Descargar Estudio de Tiempos (CxP)</button>
+
+</body>
+</html>

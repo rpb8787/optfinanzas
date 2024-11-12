@@ -1,15 +1,14 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visualización de Diagramas de Flujo</title>
+    <title>Informe de Contenidos</title>
     <style>
-        /* Estilos para la página */
+        /* Estilos generales de la página */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
             display: flex;
             height: 100vh;
             overflow: hidden;
@@ -17,126 +16,168 @@
         .container {
             display: flex;
             width: 100%;
-            height: 100%;
         }
-        /* Panel de la izquierda con barra de desplazamiento */
+        /* Panel izquierdo con barra de desplazamiento */
         .sidebar {
-            width: 250px;
-            background-color: #f0f0f0;
+            width: 300px;
+            background-color: #f4f4f4;
             padding: 20px;
-            box-shadow: 2px 0px 5px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow-y: auto; /* Barra de desplazamiento solo en el panel izquierdo */
+            box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            height: 100vh;
         }
         .sidebar img {
-            width: 100px;
-            margin-bottom: 20px;
+            width: 80px;
+            display: block;
+            margin: 0 auto 20px auto;
         }
-        /* Tamaño estándar de títulos */
-        .sidebar h2 {
-            font-size: 16px;
-            text-align: left;
-            width: 100%;
+        .sidebar h2, .sidebar h3, .sidebar h4 {
             color: #333;
-            margin-top: 20px;
+            margin: 10px 0;
         }
-        /* Lista de navegación */
-        .sidebar ul {
-            list-style-type: none;
-            padding: 0;
-            width: 100%;
-        }
-        /* Tamaño de los enlaces principales */
-        .sidebar ul li {
-            margin-bottom: 8px;
-        }
-        .sidebar ul li a {
-            text-decoration: none;
-            color: #007bff;
+        /* Tamaños de fuente para títulos y subtítulos */
+        .sidebar h2 {
             font-size: 14px;
             font-weight: bold;
         }
-        /* Tamaño estándar de subtítulos nivel 1 */
-        .sidebar ul ul {
-            list-style-type: disc;
-            margin-left: 20px;
+        .sidebar h3 {
+            font-size: 13px;
+            margin-left: 15px;
         }
-        /* Tamaño estándar de subtítulos nivel 2 */
-        .sidebar ul ul li a {
+        .sidebar h4 {
             font-size: 12px;
-            color: #555;
+            margin-left: 30px;
             font-weight: normal;
         }
+        /* Contenido del panel derecho */
         .content {
             flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background-color: #fff;
+            text-align: center;
+            padding: 20px;
+            overflow-y: auto;
         }
-        /* Ajuste del iframe para que no tenga bordes */
+        /* Estilo para el iframe */
         iframe {
             width: 100%;
             height: 100%;
             border: none;
+        }
+        /* Estilo para el logo y texto en el panel derecho */
+        .content img {
+            width: 100px;
+            margin: 0 auto;
+            display: block;
+        }
+        .content h1 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .content p {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #333;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
+    <!-- Panel izquierdo con títulos y subtítulos -->
     <div class="sidebar">
         <img src="assets/Logo.png" alt="Logo">
-        
-        <h2>Procesos ARS</h2>
-        <ul>
-            <li>
-                <a href="assets/Flujo%20Asignación%20de%20NCF%20y%20Pre-radicación.pdf" target="pdf-frame">Asignación de NCF y Pre-radicación</a>
-                <ul>
-                    <li><a href="assets/Flujo%20Asignación%20de%20NCF%20y%20Pre-radicación%20(Cambios).pdf" target="pdf-frame">Cambios</a></li>
-                    <li><a href="assets/Flujo%20Asignación%20de%20NCF%20y%20Pre-radicación%20(Propuesto).pdf" target="pdf-frame">Propuesto</a></li>
-                </ul>
-            </li>
-            <li><a href="assets/Flujo%20Gestión%20de%20Cobro%20de%20Cuentas%20ARS.pdf" target="pdf-frame">Gestión de Cobro de Cuentas ARS</a></li>
-            <li><a href="assets/Flujo%20Gestión%20de%20Glosas%20y%20Devoluciones.pdf" target="pdf-frame">Gestión de Glosas y Devoluciones</a></li>
-        </ul>
-        
-        <h2>Procesos Cuentas por Pagar</h2>
-        <ul>
-            <li>
-                <a href="assets/Flujo%20Registro%20de%20Facturas%20de%20Cuentas%20por%20Pagar.pdf" target="pdf-frame">Registro de Facturas de Cuentas por Pagar</a>
-                <ul>
-                    <li>Cambios
-                        <ul>
-                            <li><a href="assets/Flujo%20Registro%20de%20Facturas%20de%20Cuentas%20por%20Pagar%20(Cambios,%20escenario%201).pdf" target="pdf-frame">Escenario 1</a></li>
-                            <li><a href="assets/Flujo%20Registro%20de%20Facturas%20de%20Cuentas%20por%20Pagar%20(Cambios,%20escenario%202).pdf" target="pdf-frame">Escenario 2</a></li>
-                        </ul>
-                    </li>
-                    <li>Propuesto
-                        <ul>
-                            <li><a href="assets/Flujo%20Registro%20de%20Facturas%20de%20Cuentas%20por%20Pagar%20(Propuesto,%20escenario%201).pdf" target="pdf-frame">Escenario 1</a></li>
-                            <li><a href="assets/Flujo%20Registro%20de%20Facturas%20de%20Cuentas%20por%20Pagar%20(Propuesto,%20escenario%202).pdf" target="pdf-frame">Escenario 2</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="assets/Flujo%20Gestión%20de%20Pagos.pdf" target="pdf-frame">Gestión de Pagos</a></li>
-        </ul>
+        <h2><a href="Objetivos.html" target="contentFrame" style="text-decoration: none; color: #333;">1. Objetivos</a></h2>
+        <h2><a href="Alcance.html" target="contentFrame" style="text-decoration: none; color: #333;">2. Alcance</a></h2>
+        <h2><a href="Limitantes.html" target="contentFrame" style="text-decoration: none; color: #333;">3. Limitantes</a></h2>
+        <h2>4. Cronograma y Entregables</h2>
+        <h3><a href="Cronograma.html" target="contentFrame" style="text-decoration: none; color: #333;">Cronograma de Trabajo</a></h3>
+        <h3><a href="Documentacion.html" target="contentFrame" style="text-decoration: none; color: #333;">Entregables: Documentación</a></h3>
+        <h2>5. Procesos Actuales</h2>
 
-        <h2>Procesos Verificación y Prueba</h2>
-        <ul>
-            <li>
-                <a href="assets/Flujo%20Validación%20de%20Documentación%20de%20Soporte%20de%20Ventas.pdf" target="pdf-frame">Validación de Documentación de Soporte de Ventas</a>
-                <ul>
-                    <li><a href="assets/Flujo%20Validación%20de%20Documentación%20de%20Soporte%20de%20Ventas%20(Cambios).pdf" target="pdf-frame">Cambios</a></li>
-                    <li><a href="assets/Flujo%20Validación%20de%20Documentación%20de%20Soporte%20de%20Ventas%20(Propuesto).pdf" target="pdf-frame">Propuesto</a></li>
-                </ul>
-            </li>
-        </ul>
+        <!-- Subtítulos de "Procesos ARS" -->
+        <h3>Procesos ARS</h3>
+        <h4><a href="assets/Flujo Asignación de NCF y Pre-radicación.pdf" target="contentFrame" style="text-decoration: none; color: #333;">Asignación de NCF y Pre-radicación</a></h4>
+        <h4><a href="assets/Flujo Gestión de Cobro de Cuentas ARS.pdf" target="contentFrame" style="text-decoration: none; color: #333;">Gestión de Cobro de Cuentas ARS</a></h4>
+        <h4><a href="assets/Flujo Gestión de Glosas y Devoluciones.pdf" target="contentFrame" style="text-decoration: none; color: #333;">Gestión de Glosas y Devoluciones</a></h4>
+
+        <!-- Subtítulos de "Procesos Cuentas por Pagar" -->
+        <h3>Procesos Cuentas por Pagar</h3>
+        <h4><a href="assets/Flujo Gestión de Pagos.pdf" target="contentFrame" style="text-decoration: none; color: #333;">Gestión de Pagos</a></h4>
+        <h4><a href="assets/Flujo Registro de Facturas de Cuentas por Pagar.pdf" target="contentFrame" style="text-decoration: none; color: #333;">Registro de Facturas de Cuentas por Pagar</a></h4>
+
+        <!-- Subtítulos de "Procesos Validación y Prueba" -->
+        <h3>Procesos Validación y Prueba</h3>
+        <h4><a href="assets/Flujo Validación de Documentación de Soporte de Ventas.pdf" target="contentFrame" style="text-decoration: none; color: #333;">Validación de Documentación de Soporte de Ventas</a></h4>
+        
+        <!-- Título y subtítulos de HeadCount -->
+        <h2>6. HeadCount</h2>
+        <h3><a href="assets/hcars.png" target="contentFrame" style="text-decoration: none; color: #333;">HeadCount ARS</a></h3>
+        <h3><a href="assets/hccp.png" target="contentFrame" style="text-decoration: none; color: #333;">Headcount Cuentas por Pagar</a></h3>
+        <h3>Headcount Validación y Prueba</h3>
+        <h4><a href="assets/hcvp1.png" target="contentFrame" style="text-decoration: none; color: #333;">Tarjeta</a></h4>
+        <h4><a href="assets/hcvp2.png" target="contentFrame" style="text-decoration: none; color: #333;">Efectivo</a></h4>
+
+        <h2>7. Estudio de Tiempos y Carga Laboral</h2>
+	<!-- Sección ARS -->
+	<h3>ARS</h3>
+	<h4>Estudio de Tiempos</h4>
+	<button onclick="window.location.href='assets/Registro Tomas de Tiempo Finanzas.xlsx'" style="display: block; margin: 10px auto;">Descargar Estudio de Tiempos</button>
+	<h4><a href="analisis_carga_ars.html" target="contentFrame" style="text-decoration: none; color: #333;">Análisis de Carga Laboral</a></h4>
+	<h4><a href="analisis_cap_ars.html" target="contentFrame" style="text-decoration: none; color: #333;">Análisis de Capacidad</a></h4>
+	
+	<!-- Sección Cuentas por Pagar -->
+	<h3>Cuentas por Pagar</h3>
+	<h4>Estudio de Tiempos</h4>
+	<button onclick="window.location.href='assets/Registro Tomas de Tiempo Finanzas.xlsx'" style="display: block; margin: 10px auto;">Descargar Estudio de Tiempos</button>
+	<h4><a href="analisis_carga_cp.html" target="contentFrame" style="text-decoration: none; color: #333;">Análisis de Carga Laboral</a></h4>
+	<h4><a href="analisis_cap_cp.html" target="contentFrame" style="text-decoration: none; color: #333;">Análisis de Capacidad</a></h4>
+
+	<!-- Sección Validación y Prueba -->
+	<h3>Validación y Prueba</h3>
+	<h4>Estudio de Tiempos</h4>
+	<button onclick="window.location.href='assets/Registro Tomas de Tiempo Finanzas.xlsx'" style="display: block; margin: 10px auto;">Descargar Estudio de Tiempos</button>
+	<h4><a href="analisis_carga_vp.html" target="contentFrame" style="text-decoration: none; color: #333;">Análisis de Carga Laboral</a></h4>
+	<h4><a href="analisis_cap_vp.html" target="contentFrame" style="text-decoration: none; color: #333;">Análisis de Capacidad: Validación y Prueba Ventas con Tarjeta</a></h4>
+	<h4><a href="analisis_cap_vp2.html" target="contentFrame" style="text-decoration: none; color: #333;">Análisis de Capacidad: Validación y Prueba Ventas en Efectivo</a></h4>
+
+	<h2>8. Análisis de Brechas</h2>
+	<h3>ARS</h3>	
+	<h4><a href="arsbrecha1.html" target="contentFrame" style="text-decoration: none; color: #333;">Brecha #1: Estado Actual</a></h4>
+	<h4><a href="arsbrecha1a.html" target="contentFrame" style="text-decoration: none; color: #333;">Brecha #1: Estado Deseado</a></h4>
+	<h4><a href="arsbrecha2.html" target="contentFrame" style="text-decoration: none; color: #333;">Brecha #2: Estado Actual</a></h4>
+	<h4><a href="arsbrecha2a.html" target="contentFrame" style="text-decoration: none; color: #333;">Brecha #2: Estado Deseado</a></h4>
+	<h4><a href="arsbrecha3.html" target="contentFrame" style="text-decoration: none; color: #333;">Brecha #3: Estado Actual</a></h4>
+	<h4><a href="arsbrecha3a.html" target="contentFrame" style="text-decoration: none; color: #333;">Brecha #3: Estado Deseado</a></h4>
+	<h4><a href="arsbrechaprocesos.html" target="contentFrame" style="text-decoration: none; color: #333;">Brechas de Procesos</a></h4>
+	<h4><a href="arsbrechahc.html" target="contentFrame" style="text-decoration: none; color: #333;">Brechas de HeadCount</a></h4>
+	
+	<h3>Cuentas por Pagar</h3>	
+	<h4><a href="cpbrecha1.html" target="contentFrame" style="text-decoration: none; color: #333;">Brecha #1: Estado Actual</a></h4>
+	<h4><a href="cpbrecha1a.html" target="contentFrame" style="text-decoration: none; color: #333;">Brecha #1: Estado Deseado</a></h4>
+	<h4><a href="cpbrechaprocesos.html" target="contentFrame" style="text-decoration: none; color: #333;">Brechas de Procesos</a></h4>
+	<h4><a href="cpbrechahc.html" target="contentFrame" style="text-decoration: none; color: #333;">Brechas de HeadCount</a></h4>
+	
+	<h3>Validación y Prueba</h3>	
+	<h4><a href="vpbrecha1.html" target="contentFrame" style="text-decoration: none; color: #333;">Brecha #1: Estado Actual</a></h4>
+	<h4><a href="vpbrecha1a.html" target="contentFrame" style="text-decoration: none; color: #333;">Brecha #1: Estado Deseado</a></h4>
+	<h4><a href="vpbrecha2.html" target="contentFrame" style="text-decoration: none; color: #333;">Brecha #2: Estado Actual</a></h4>
+	<h4><a href="vpbrecha2a.html" target="contentFrame" style="text-decoration: none; color: #333;">Brecha #2: Estado Deseado</a></h4>
+	<h4><a href="vpbrechaprocesos.html" target="contentFrame" style="text-decoration: none; color: #333;">Brechas de Procesos</a></h4>
+	<h4><a href="vpbrechahc.html" target="contentFrame" style="text-decoration: none; color: #333;">Brechas de HeadCount</a></h4>
+	
+	<h2><a href="Consideraciones.html" target="contentFrame" style="text-decoration: none; color: #333;">9. Consideraciones</a></h2>
+	<h2><a href="Beneficios.html" target="contentFrame" style="text-decoration: none; color: #333;">10. Beneficios Esperados</a></h2>
+	<h2>*****</h2>
+
     </div>
+
+    <!-- Panel derecho donde se carga el contenido en un iframe -->
     <div class="content">
-        <iframe name="pdf-frame" src="assets/Flujo%20Asignación%20de%20NCF%20y%20Pre-radicación.pdf"></iframe>
+        <!-- Logo y texto en el panel derecho -->
+        <img src="assets/Logo.png" alt="Logo">
+        <h1>Informe de Optimización de Procesos – Finanzas</h1>
+        <p>Fase I: Contabilidad (Cuentas por Cobrar / Cuentas por Pagar) y Finanzas (Validación y Prueba)</p>
+        <iframe name="contentFrame" src="home.html"></iframe> <!-- Página de inicio predeterminada -->
     </div>
 </div>
 

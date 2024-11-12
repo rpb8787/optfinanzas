@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de Diagramas de Flujo</title>
+    <style>
+        /* Estilos para la página */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            box-shadow: 2px 0px 5px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sidebar img {
+            width: 100px; /* Ajusta el tamaño del logo aquí */
+            margin-bottom: 20px;
+        }
+        .sidebar h2, .sidebar h3 {
+            text-align: left;
+            width: 100%;
+            color: #333;
+            margin-top: 20px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+        }
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="sidebar">
+        <img src="assets/Logo.png" alt="Logo">
+        <h2>Procesos ARS</h2>
+        <ul>
+            <li><a href="assets/Flujo%20Asignación%20de%20NCF%20y%20Pre-radicación.pdf" target="pdf-frame">Asignación de NCF y Pre-radicación</a></li>
+            <li><a href="assets/Flujo%20Gestión%20de%20Cobro%20de%20Cuentas%20ARS.pdf" target="pdf-frame">Gestión de Cobro de Cuentas ARS</a></li>
+            <li><a href="assets/Flujo%20Gestión%20de%20Glosas%20y%20Devoluciones.pdf" target="pdf-frame">Gestión de Glosas y Devoluciones</a></li>
+        </ul>
+        
+        <h2>Procesos Cuentas por Pagar</h2>
+        <ul>
+            <li><a href="assets/Flujo%20Gestión%20de%20Pagos.pdf" target="pdf-frame">Gestión de Pagos</a></li>
+            <li><a href="assets/Flujo%20Registro%20de%20Facturas%20de%20Cuentas%20por%20Pagar.pdf" target="pdf-frame">Registro de Facturas de Cuentas por Pagar</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <iframe name="pdf-frame" src="assets/Flujo%20Asignación%20de%20NCF%20y%20Pre-radicación.pdf"></iframe>
+    </div>
+</div>
+
+</body>
+</html>

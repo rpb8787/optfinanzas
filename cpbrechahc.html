@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeadCount Cuentas por Pagar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .link-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .link {
+            display: block;
+            margin: 10px 0;
+            font-size: 1.2em;
+            color: #007bff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+        img {
+            width: 80%;
+            height: auto;
+            border: 1px solid #ccc;
+            display: none;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HeadCount Cuentas por Pagar</h1>
+
+    <div class="link-container">
+        <!-- Enlace Actual -->
+        <a onclick="showImage('assets/hccpprop.png')" class="link">Actual</a>
+        
+        <!-- Enlace Propuesto -->
+        <a onclick="showImage('assets/hccpprop2.png')" class="link">Propuesto Escenario 1</a>
+	<a onclick="showImage('assets/hccpprop3.png')" class="link">Propuesto Escenario 2</a>
+	<a onclick="showImage('assets/hccpprop4.png')" class="link">Tabla de HeadCount Propuesto</a>
+    </div>
+
+    <!-- Imagen que se muestra -->
+    <img id="imageViewer" src="" alt="Imagen de HeadCount Cuentas por Pagar">
+
+    <script>
+        function showImage(imagePath) {
+            const image = document.getElementById('imageViewer');
+            image.src = imagePath;
+            image.style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
