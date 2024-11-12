@@ -59,6 +59,26 @@
             background-color: #f1f1f1;
         }
 
+        /* Highlight and tooltip for specific cell */
+        .highlight {
+            background-color: yellow;
+            position: relative;
+        }
+
+        .highlight:hover::after {
+            content: "A pesar de no corresponder a una política del área de finanzas, para la cual está enfocado este informe, la misma fue considerada dentro de los entregables por el alto impacto que representa este documento a los procesos financieros.";
+            position: absolute;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            top: 100%;
+            left: 0;
+            white-space: normal;
+            width: 300px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             table, th, td {
@@ -87,7 +107,11 @@
                 </tr>
             </thead>
             <tbody>
-                <tr><td>Negocios</td><td>Política</td><td>Política Negociación con Proveedores</td><td>En proceso</td></tr>
+                <tr>
+                    <td>Negocios</td>
+                    <td>Política</td>
+                    <td class="highlight">Política Negociación con Proveedores</td>
+                    <td>En proceso</td>
                 <tr><td>Finanzas</td><td>Ficha de Procesos</td><td>Ficha de Procesos de Finanzas</td><td>En proceso</td></tr>
                 <tr><td>Contabilidad</td><td>Ficha de Procesos</td><td>Ficha de Procesos Contabilidad</td><td>En proceso</td></tr>
                 <tr><td>Contabilidad</td><td>Procedimiento</td><td>Procedimiento Validación y Prueba de Documentación de Soporte de Ventas</td><td>Para revisión</td></tr>
