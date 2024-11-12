@@ -35,6 +35,25 @@
             background-color: #4CAF50;
             color: white;
         }
+        .highlight-cell {
+            background-color: yellow;
+            position: relative;
+        }
+        .highlight-cell:hover::after {
+            content: "Esta carga laboral no contempla la aplicación de pagos masiva que se realiza en el cierre del mes.";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            white-space: nowrap;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+            font-size: 12px;
+            z-index: 1;
+        }
         .image-container {
             text-align: center;
             margin-top: 20px;
@@ -63,7 +82,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Analista de Cuentas ARS</td>
+                    <td class="highlight-cell">Analista de Cuentas ARS</td>
                     <td>255.00</td>
                     <td>116.12</td>
                     <td>45.54</td>
