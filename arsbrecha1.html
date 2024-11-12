@@ -9,8 +9,6 @@
             font-family: Arial, sans-serif;
             margin: 20px;
             background-color: #f4f4f4;
-            position: relative;
-            min-height: 100vh;
         }
         h1 {
             text-align: center;
@@ -23,6 +21,22 @@
             background-color: #fff;
             border-radius: 5px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .download-button {
+            display: block;
+            text-align: right;
+            margin-top: -40px;
+        }
+        .download-button a {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .download-button a:hover {
+            background-color: #45a049;
         }
         p {
             text-align: justify;
@@ -38,25 +52,13 @@
             height: auto;
             border-radius: 5px;
         }
-        .download-button {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-        }
-        .download-button a {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-        .download-button a:hover {
-            background-color: #45a049;
-        }
     </style>
 </head>
 <body>
+    <div class="download-button">
+        <a href="assets/Reporte_Ventas_ARS_x_Sucursal (2).xlsx" download>Descargar Reporte de Ventas ARS</a>
+    </div>
+
     <h1>Falta de consideración de estacionalidad en la planificación del trabajo</h1>
     
     <div class="content">
@@ -64,12 +66,8 @@
             Las ventas con ARS disminuyen con el paso de los meses en las sucursales. Desde enero del presente año, hasta septiembre, la cantidad de ventas ARS ha disminuido en un 22.44% (de 65,830 a 51,056). Esto se debe a un factor de disponibilidad de beneficios de los clientes asegurados en sus pólizas, los cuales van disminuyendo conforme pasan los meses del año. No se pudo evidenciar en los estudios realizados en el área que esta reducción por estacionalidad sea considerada para definir el HeadCount de los auxiliares de ARS.
         </p>
         <div class="image-container">
-            <img src="assets/ventasars.png" alt="Gráfico de ventas ARS">
+            <img src="assets/ventasars.PNG" alt="Gráfico de ventas ARS">
         </div>
-    </div>
-
-    <div class="download-button">
-        <a href="assets/Reporte_Ventas_ARS_x_Sucursal (2).xlsx" download>Descargar Reporte de Ventas ARS</a>
     </div>
 </body>
 </html>
