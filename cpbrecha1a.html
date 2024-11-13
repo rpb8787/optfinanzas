@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Optimización de Carga Laboral en Cuentas por Pagar</title>
     <style>
-        body {
+       body {
             font-family: Arial, sans-serif;
             margin: 20px;
             background-color: #f4f4f4;
@@ -41,6 +41,48 @@
         }
         th {
             background-color: #f2f2f2;
+        }
+        /* Highlight and tooltip for specific cell */
+        .highlight {
+            background-color: yellow;
+            position: relative;
+        }
+        .highlight:hover::after {
+            content: "Para fines del estudio se consideran únicamente aquellos auxiliares implicados en el procesamiento de facturas de CENDIS y Sucursales, debido a que son los más afectados por la carga laboral del área, la cual está dividida en Sucursal y CENDIS (5), Activos Fijos (1) y Caja Chica (1).";
+            position: absolute;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            top: 100%;
+            left: 0;
+            white-space: normal;
+            width: 600px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        /* Tooltip for another cell */
+        .tooltip-cell {
+            background-color: yellow;
+            position: relative;
+        }
+        .tooltip-cell:hover::after {
+            content: "La fórmula funciona al establecer una proporción entre el número de auxiliares actuales y el porcentaje de ocupación que tienen en relación con el porcentaje de ocupación óptimo que se desea alcanzar. Básicamente, toma la cantidad de trabajo actual (que está distribuido entre los auxiliares con un porcentaje de ocupación específico) y ajusta ese trabajo para reflejar lo que ocurriría si la ocupación fuera más alta. Al hacerlo, calcula cuántos auxiliares serían necesarios para mantener la misma carga de trabajo, pero con un mayor porcentaje de ocupación. Es una forma de estimar cuántos auxiliares adicionales o menos se requieren para alcanzar el nivel de eficiencia deseado.";
+            position: absolute;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            top: 100%;
+            left: 0;
+            white-space: normal;
+            width: 600px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            table, th, td {
+                font-size: 12px;
+            }
         }
         button {
             background-color: #4CAF50;
@@ -112,10 +154,10 @@
         </thead>
         <tbody>
             <tr>
-                <td>X (auxiliares requeridos)= (X1 (auxiliares actuales) x T (ocupación actual)) / T1 (ocupación óptima)<br>
+                <td class="tooltip-cell">X (auxiliares requeridos)= (X1 (auxiliares actuales) x T (ocupación actual)) / T1 (ocupación óptima)<br>
                     X= 4.12 = 4 Auxiliares Sr. de Cuentas por Pagar (2 auxiliares dedicados a facturas de sucursales y CENDIS, y 2 auxiliares para el resto)
                 </td>
-                <td>X (auxiliares requeridos)= (X1 (auxiliares actuales) x T (ocupación actual)) / T1 (ocupación óptima)<br>
+                <td class="tooltip-cell">X (auxiliares requeridos)= (X1 (auxiliares actuales) x T (ocupación actual)) / T1 (ocupación óptima)<br>
                     X= 2.16 = 2 Auxiliares Sr. de Cuentas por Pagar (1 auxiliar dedicado a facturas de sucursales y CENDIS y 1 auxiliar para el resto)
                 </td>
             </tr>
@@ -144,7 +186,7 @@
                 <td>480</td>
             </tr>
             <tr>
-                <td>HeadCount (Aux. Sr. de CxP)(Sucursales y CENDIS)</td>
+                <td class="highlight">HeadCount (Aux. Sr. de CxP)(Sucursales y CENDIS)</td>
                 <td>2</td>
             </tr>
             <tr>
@@ -176,7 +218,7 @@
                 <td>480</td>
             </tr>
             <tr>
-                <td>HeadCount (Aux. Sr. de CxP)(Sucursales y CENDIS)</td>
+                <td class="highlight">HeadCount (Aux. Sr. de CxP)(Sucursales y CENDIS)</td>
                 <td>1</td>
             </tr>
             <tr>

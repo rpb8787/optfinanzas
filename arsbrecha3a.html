@@ -56,6 +56,35 @@
             line-height: 1.6;
             color: #333;
         }
+ tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Highlight and tooltip for specific cell */
+        .highlight {
+            background-color: yellow;
+            position: relative;
+        }
+
+        .highlight:hover::after {
+            content: "La fórmula funciona al establecer una proporción entre el número de auxiliares actuales y el porcentaje de ocupación que tienen en relación con el porcentaje de ocupación óptimo que se desea alcanzar. Básicamente, toma la cantidad de trabajo actual (que está distribuido entre los auxiliares con un porcentaje de ocupación específico) y ajusta ese trabajo para reflejar lo que ocurriría si la ocupación fuera más alta. Al hacerlo, calcula cuántos auxiliares serían necesarios para mantener la misma carga de trabajo, pero con un mayor porcentaje de ocupación. Es una forma de estimar cuántos auxiliares adicionales o menos se requieren para alcanzar el nivel de eficiencia deseado.";
+            position: absolute;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            top: 100%;
+            left: 0;
+            white-space: normal;
+            width: 600px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            table, th, td {
+                font-size: 12px;
+            }
     </style>
 </head>
 <body>
@@ -138,7 +167,7 @@
             Asumiendo que se va a dedicar el último día previo al corte para el empaque de la documentación a enviar a las ARS, necesitaríamos que cada auxiliar empaque una ARS cada 49.66 min, como mínimo. Comparando con el tiempo de ciclo actual para empaque por ARS (43.80 min para Senasa, considerada la más compleja de las ARS), podemos decir que nos encontramos dentro del ritmo requerido con el estándar actual. Para el cálculo de los auxiliares requeridos para el resto del tiempo productivo, estaremos basándonos en el % de desocupación calculado anteriormente, en función a las tareas ejecutadas por los 4 auxiliares. Asumiendo que el % de Ocupación tiene un comportamiento lineal:
         </p>
 
-        <p>
+        <p class="highlight">
             X (auxiliares requeridos)= (X1 (auxiliares actuales) x T (ocupación actual)) / T1 (ocupación óptima)
         </p>
 
