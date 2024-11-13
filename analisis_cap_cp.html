@@ -44,6 +44,35 @@
             height: auto;
             border-radius: 5px;
         }
+tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Highlight and tooltip for specific cell */
+        .highlight {
+            background-color: yellow;
+            position: relative;
+        }
+
+        .highlight:hover::after {
+            content: "Para fines del estudio se consideran únicamente aquellos auxiliares implicados en el procesamiento de facturas de CENDIS y Sucursales, debido a que son los más afectados por la carga laboral del área, la cual está dividida en Sucursal y CENDIS (5), Activos Fijos (1) y Caja Chica (1).";
+            position: absolute;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            top: 100%;
+            left: 0;
+            white-space: normal;
+            width: 300px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            table, th, td {
+                font-size: 12px;
+            }
         iframe {
             width: 80%;
             height: 400px;
@@ -83,7 +112,7 @@
                     <td>480</td>
                 </tr>
                 <tr>
-                    <td>HeadCount (Aux. Sr. de CxP)(Sucursales y CENDIS)</td>
+                    <td class="highlight">HeadCount (Aux. Sr. de CxP)(Sucursales y CENDIS)</td>
                     <td>3</td>
                 </tr>
                 <tr>
