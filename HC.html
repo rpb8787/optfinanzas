@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HeadCount Propuesto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .table-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        /* Sombrea en amarillo la celda específica */
+        .highlighted-cell {
+            background-color: yellow;
+            position: relative;
+        }
+        /* Tooltip estilo */
+        .highlighted-cell:hover::after {
+            content: "El valor entre paréntesis representa la reubicación del personal considerando el escenario 2 de la propuesta definida.";
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 12px;
+            width: 220px;
+            text-align: center;
+            white-space: normal;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <h1>HeadCount Propuesto</h1>
+    
+    <div class="table-container">
+        <table>
+            <tr>
+                <th>Puesto</th>
+                <th>Actual</th>
+                <th>Propuesto</th>
+                <th>Acción</th>
+                <th>Diferencia</th>
+            </tr>
+            <tr>
+                <td>Auxiliar Sr. de Cuentas ARS</td>
+                <td>4</td>
+                <td>3</td>
+                <td>Reubicación</td>
+                <td>-1</td>
+            </tr>
+            <tr>
+                <td>Auxiliar Jr. de Cuentas ARS</td>
+                <td>11</td>
+                <td>0</td>
+                <td>Transferencia</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>Auxiliar Sr. de Cuentas por Pagar</td>
+                <td>5</td>
+                <td>4 (2)</td>
+                <td>Reubicación</td>
+                <td class="highlighted-cell">-1 (-3)</td>
+            </tr>
+            <tr>
+                <td>Auxiliar Sr. de Validación y Prueba (Tarjeta)</td>
+                <td>1</td>
+                <td>0</td>
+                <td>Reubicación</td>
+                <td>-1</td>
+            </tr>
+            <tr>
+                <td>Auxiliar Jr. de Validación y Prueba (Tarjeta)</td>
+                <td>4</td>
+                <td>0</td>
+                <td>Transferencia / Reubicación</td>
+                <td>-2</td>
+            </tr>
+            <tr>
+                <td>Auxiliar Sr. de Validación y Prueba</td>
+                <td>1</td>
+                <td>0</td>
+                <td>Reubicación</td>
+                <td>-1</td>
+            </tr>
+            <tr>
+                <td>Auxiliar Jr. de Validación y Prueba</td>
+                <td>10</td>
+                <td>0</td>
+                <td>Transferencia</td>
+                <td>0</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
