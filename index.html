@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-   <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informe de Contenidos</title>
     <style>
@@ -26,6 +26,7 @@
             overflow-y: auto;
             height: 100vh;
             transition: width 0.3s ease;
+            position: relative;
         }
         .sidebar.collapsed {
             width: 60px;
@@ -39,6 +40,7 @@
         .sidebar h2, .sidebar h3, .sidebar h4 {
             color: #333;
             margin: 10px 0;
+            position: relative;
         }
         .sidebar h2 {
             font-size: 14px;
@@ -52,6 +54,14 @@
             font-size: 12px;
             margin-left: 30px;
             font-weight: normal;
+        }
+        /* Arrow styling */
+        .sidebar a.active::before {
+            content: "➤";
+            color: #007BFF;
+            position: absolute;
+            left: -20px;
+            font-size: 14px;
         }
         /* Oculta los títulos cuando la barra lateral está colapsada */
         .sidebar.collapsed h2, .sidebar.collapsed h3, .sidebar.collapsed h4 {
@@ -101,7 +111,7 @@
 
 <div class="container">
     <!-- Panel izquierdo con títulos y subtítulos -->
-     <div class="sidebar" id="sidebar">
+    <div class="sidebar" id="sidebar">
         <button class="collapse-button" onclick="toggleSidebar()">☰</button>
         <img src="assets/Logo.png" alt="Logo">
         <h2><a href="Objetivos.html" target="contentFrame" style="text-decoration: none; color: #333;">1. Objetivos</a></h2>
@@ -189,21 +199,46 @@
 
     </div>
 
-<script>
-    function toggleSidebar() {
-        document.getElementById("sidebar").classList.toggle("collapsed");
-    }
-</script>
-
     <!-- Panel derecho donde se carga el contenido en un iframe -->
     <div class="content">
         <!-- Logo y texto en el panel derecho -->
         <img src="assets/Logo.png" alt="Logo">
         <h1>Informe de Optimización de Procesos – Finanzas</h1>
-        <p>Fase I: Contabilidad (Cuentas por Cobrar / Cuentas por Pagar) y Finanzas (Validación y Prueba)</p>
-        <iframe name="contentFrame" src="home.html"></iframe> <!-- Página de inicio predeterminada -->
+        <iframe name="contentFrame" id="contentFrame"></iframe>
     </div>
 </div>
+
+<script>
+    function toggleSidebar() {
+        document.getElementById("sidebar").classList.toggle("collapsed");
+    }
+
+    // Add active class with arrow to clicked link and remove from others
+    document.querySelectorAll('.sidebar a').forEach(link => {
+        link.addEventListener('click', function() {
+            // Remove 'active' class from all links
+            document.querySelectorAll('.sidebar a').forEach(l => l.classList.remove('active'));
+            // Add 'active' class with arrow to the clicked link
+            this.classList.add('active');
+        });
+    });
+
+    // Highlight the link with an arrow based on iframe content
+    const contentFrame = document.getElementById("contentFrame");
+    contentFrame.addEventListener("load", function() {
+        const currentUrl = contentFrame.contentWindow.location.href;
+        
+        // Remove 'active' class from all links
+        document.querySelectorAll('.sidebar a').forEach(link => link.classList.remove('active'));
+
+        // Add 'active' class with arrow to the link that matches the iframe content
+        document.querySelectorAll('.sidebar a').forEach(link => {
+            if (link.href === currentUrl) {
+                link.classList.add('active');
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
