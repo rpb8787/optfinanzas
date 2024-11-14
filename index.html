@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
+   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informe de Contenidos</title>
     <style>
@@ -25,6 +25,11 @@
             box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
             overflow-y: auto;
             height: 100vh;
+            transition: width 0.3s ease;
+        }
+        .sidebar.collapsed {
+            width: 60px;
+            padding: 20px 5px;
         }
         .sidebar img {
             width: 80px;
@@ -35,7 +40,6 @@
             color: #333;
             margin: 10px 0;
         }
-        /* Tamaños de fuente para títulos y subtítulos */
         .sidebar h2 {
             font-size: 14px;
             font-weight: bold;
@@ -48,6 +52,19 @@
             font-size: 12px;
             margin-left: 30px;
             font-weight: normal;
+        }
+        /* Oculta los títulos cuando la barra lateral está colapsada */
+        .sidebar.collapsed h2, .sidebar.collapsed h3, .sidebar.collapsed h4 {
+            display: none;
+        }
+        .collapse-button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 14px;
         }
         /* Contenido del panel derecho */
         .content {
@@ -84,7 +101,8 @@
 
 <div class="container">
     <!-- Panel izquierdo con títulos y subtítulos -->
-    <div class="sidebar">
+     <div class="sidebar" id="sidebar">
+        <button class="collapse-button" onclick="toggleSidebar()">☰</button>
         <img src="assets/Logo.png" alt="Logo">
         <h2><a href="Objetivos.html" target="contentFrame" style="text-decoration: none; color: #333;">1. Objetivos</a></h2>
         <h2><a href="Alcance.html" target="contentFrame" style="text-decoration: none; color: #333;">2. Alcance</a></h2>
@@ -170,6 +188,12 @@
 	<h2>*****</h2>
 
     </div>
+
+<script>
+    function toggleSidebar() {
+        document.getElementById("sidebar").classList.toggle("collapsed");
+    }
+</script>
 
     <!-- Panel derecho donde se carga el contenido en un iframe -->
     <div class="content">
